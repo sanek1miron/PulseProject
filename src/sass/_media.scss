@@ -58,9 +58,6 @@
     .advantages {
         min-height: 400px;
         padding: 44px 0 44px 0;
-        &__title {
-            font-size: 26px;
-        };
         &__wrapper {
             justify-content: space-around;
             margin-top: 32px;
@@ -80,7 +77,10 @@
             font-size: 12px;
             margin-top: 14px;
         };
-    }
+    };
+    .title {
+        font-size: 26px;
+    };
     
 };
 @media (max-width: 767px) {
@@ -141,9 +141,6 @@
     .advantages {
         min-height: 310px;
         padding: 30px 0;
-        &__title {
-            font-size: 22px;
-        };
         &__wrapper {
             justify-content: space-between;
             padding: 0 15px;
@@ -164,7 +161,10 @@
             font-size: 11px;
             margin-top: 10px;
         };
-    }
+    };
+    .title {
+        font-size: 22px;
+    };
 };
 @media (max-width: 575px) {
     .header {
@@ -228,9 +228,6 @@
     .advantages {
         min-height: 310px;
         padding: 30px 0;
-        &__title {
-            font-size: 20px;
-        };
         &__wrapper {
             flex-direction: column;
             align-items: center;
@@ -252,5 +249,8 @@
             font-size: 11px;
             margin-top: 6px;
         };
+    };
+    .title {
+        font-size: 20px;
     };
 }
