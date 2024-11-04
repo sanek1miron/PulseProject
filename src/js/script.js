@@ -49,4 +49,55 @@ $(document).ready(function(){
 
   toggleSlide('.catalog-item__back');
 
+  //Modal
+
+  $('[data-modal=consultation]').on('click', function() {
+    $('.overlay, #consultation').fadeIn('slow');
+  });
+  $('.modal__close').on('click', function() {
+    $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+  });
+
+  $('.button_mini').each(function(i) {
+    $(this).on('click', function() {
+      $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+      $('.overlay, #order').fadeIn('slow');
+    })
+  });
+
+  function validateForm(form){
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        phone: "required"
+      },
+      messages: {
+        name: {
+          required: "Пожалуйста, введите свое имя",
+          minlength: jQuery.validator.format("Введите более {0} символов")
+        },
+        email: {
+          required: "Пожалуйста, введите свою почту",
+          email: "Ваша почта должна быть в формате name@domain.com"
+        },
+        phone: {
+          required: "Пожалуйста, введите свой номер телефона"
+        },
+      }
+    });
+  };
+
+  validateForm('#consultation form');
+  validateForm('#consultation-form');
+  validateForm('#order form');
+
+  $('input[name=phone]').mask("+38(099)-999-99-99");
+ 
 });
